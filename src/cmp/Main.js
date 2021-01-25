@@ -10,7 +10,10 @@ function Main() {
             <About /> 
             <Profile />
             <Question />
+            {/* <Logout /> */}
         </div>
+
+        
     )
 }
 export default Main

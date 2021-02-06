@@ -1,17 +1,15 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import Auth from './cmp/Auth.js'
-// import Main from './cmp/Main.js'
+import AppRouter from './cmp/configuration/AppRouter.js'
+import Footer from './cmp/Footer.js'
 import Header from './cmp/Header'
-
 
 function App() {
     return (
         <BrowserRouter>
-            <h1>Home</h1>
-            {/* <Main /> */}
-            <Auth />
             <Header />
+            <AppRouter />
+            {/* <Footer /> */}
         </BrowserRouter>
     )
 }

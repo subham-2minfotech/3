@@ -1,3 +1,29 @@
-.link {
-    padding: 10px;
-}
+.page-header, .page-header-space {
+    height: 70px;
+  }
+  
+  .page-footer, .page-footer-space {
+    height: 50px;
+    text-align: center;
+  
+  }
+  
+  .page-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black; /* for demo */
+    background: rgb(103, 190, 230); /* for demo */
+  }
+  
+  .page-header {
+    position: fixed;
+    top: 0mm;
+    width: 100%;
+    border-bottom: 1px solid black; /* for demo */
+    background: rgb(240, 194, 234); /* for demo */
+  }
+  
+  .page-app {
+    margin-top:80px;
+  } 

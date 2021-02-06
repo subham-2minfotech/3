@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function Signup() {
+export const Training = () => {
     const [state, setState] = React.useState({
         "name": "",
         "age": "",
@@ -30,10 +30,10 @@ function Signup() {
         event.preventDefault();
         if (handleFillNameAttr() && handleFillAgeAttr() && handleFillNumberAttr() && handleFillEmailAttr() && handleFillPasswordAttr() && handleFillCPasswordAttr()) {
             localStorage.setItem('User', JSON.stringify(state))
-        }
+        } 
         else {
             alert("Please Check Error in Red Color")
-        }
+        }     
     }
 
     const handleOnChange = (e) => {
@@ -155,9 +155,9 @@ function Signup() {
 
     const handleFillCPasswordAttr = (e) => {
         console.log("Confirm Password - Confirm Password - Confirm Password ")
-        if (state.cPassword === state.password) {
+        if(state.cPassword  === state.password) {
             console.log("not empty")
-            let oldState = { ...errrorDataCPassword }
+            let oldState = {...errrorDataCPassword}
             oldState.errcpassword = ""
             setErrrorDataCPassword(oldState)
             return true
@@ -176,19 +176,19 @@ function Signup() {
 
     return (
         <div style={{ marginLeft: '20%', marginBottom: '10%' }}>
-            <form onSubmit={handleOnSubmit}>
+            <form onSubmit={handleOnSubmit}> 
                 <label>
-                    <p>
-                        Name :
+                <p>
+                    Name :
                     <input type="text" name="name"
-                            value={state && state.name || ''}
-                            onChange={handleOnChange}
-                            onBlur={handleFillNameAttr}
-                        />
-                        <div style={{ color: 'red' }}>
-                            {errorDataName && errorDataName.errname}
-                        </div>
-                    </p>
+                        value={state && state.name || ''}
+                        onChange={handleOnChange}
+                        onBlur={handleFillNameAttr}
+                    />
+                    <div style={{ color: 'red' }}>
+                        {errorDataName && errorDataName.errname}
+                    </div>
+                </p>
                 </label>
                 <label>
                     <p>
@@ -260,22 +260,21 @@ function Signup() {
                 <label>
                     <p>
                         Confirm Password :
-                        <input type="password" name="cPassword"
-                            value={state.cPassword}
-                            onChange={handleOnChange}
+                        <input type="password" name="cPassword" 
+                            value={state.cPassword} 
+                            onChange={handleOnChange} 
                             onBlur={handleFillCPasswordAttr}
                         />
-                        <div style={{ color: 'red' }}>
+                        <div style={{ color: 'red'}}>
                             {errrorDataCPassword && errrorDataCPassword.errcpassword}
                         </div>
-                    </p>
+                   </p>
                 </label>
                 <br />
                 <br />
                 <button type="submit" value="Submit" >Submit </button>
                 <button type="reset" onClick={handleReSetForm}>Clear </button>
-            </form>
+            </form>     
         </div>
     )
 }
-export default Signup
